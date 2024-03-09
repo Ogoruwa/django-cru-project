@@ -1,0 +1,18 @@
+{% extends 'app/index.html' %}
+
+{% block content %}
+
+<form method="post"> {% csrf_token %}
+    <fieldset>
+        <legend> <h2>Create Object Form</h1> </legend>
+        
+        <ul>
+            {{ form.as_ul }}
+        </ul>
+
+    </fieldset> <br>
+
+    <input type="submit" value="Create">
+</form>
+
+{% endblock %}

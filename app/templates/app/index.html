@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <title>{% block title %}&lt;Website Name&gt;{% endblock %}</title>
+
+    <meta charset="UTF-8" lang="en" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html" charset='UTF-8' lang="en" />
+    <meta http-equiv="X-UA-Compatible" content="IE = edge , chrome = 1" />
+    
+    <meta name="author" content="" />
+    <meta name="publisher" content="" />
+    <meta name="audience" content="All" />
+    <meta name="description" content="" />
+    <meta name="copyright" content="" />
+    <meta name="page-topic" content="" />
+    <meta name="keywords" content="" />
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" />
+</head>
+
+
+<body>
+    <noscript> Your browser's javascript is disabled </noscript>
+    
+    {% include 'app/header.html' %}
+    
+    <div class="container">
+        <main class="pb-3" id="root" role="main">
+            <div id="content">
+                {% block content %}
+
+                <p> This is a template project for the creation, edition and listing of an object model. </p>
+                <p> It consists of four pages: </p>
+                <ol>
+                    <li> Home page </li>
+                    <li> Create page </li>
+                    <li> Edit page </li>
+                    <li> List page </li>
+                </ol>
+                <p> The Django admin dashboard can also be accessed <a href="{% url 'admin:index' %}">here</a>. </p>
+                <p> The link to each page except the edit page can be found in the <a href="#header">header</a>. </p>
+                <p> The header and footer are included in each page using the Django template langauge. </p>
+                <p> The index page is extended by the other pages. </p>
+
+                {% endblock %}
+            </div>
+
+        </main>
+    </div>
+
+    {% include 'app/footer.html' %}
+
+</body>
+
+</html>
